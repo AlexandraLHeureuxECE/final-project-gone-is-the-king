@@ -11,6 +11,9 @@ public class FistAnimatorController : MonoBehaviour
     // Duration for the fist to stay in the offset position
     public float punchDuration = 0.2f;
 
+    // Damage dealt to enemies when the fist hits
+    public int damageAmount = 10;
+
     // Original position of the fist
     private Vector3 originalPosition;
 
@@ -44,10 +47,10 @@ public class FistAnimatorController : MonoBehaviour
 
     private void MoveFist()
     {
-        // Move the fist in the forward direction
+        // Move the fist in the forward direction (if using 2D, consider transform.right)
         transform.localPosition += transform.forward * punchOffset;
 
-        // Schedule returning the fist to its original position
+        // Schedule returning the fist to its original position after punchDuration
         Invoke(nameof(ResetFistPosition), punchDuration);
     }
 
@@ -55,5 +58,23 @@ public class FistAnimatorController : MonoBehaviour
     {
         // Reset the fist to its original position
         transform.localPosition = originalPosition;
+    }
+
+    // This method uses 2D collision detection to determine when the punch hits an enemy.
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        // Check if the collided object has the tag "Enemy"
+        if (other.CompareTag("Enemy"))
+        {
+            // Get the Enemy component from the collided object
+            Enemy enemy = other.GetComponent<Enemy>();
+            if (enemy != null)
+            {
+                // When the punch hits, call TakeDamage on the enemy.
+                // In your Enemy script, TakeDamage triggers the Hurt animation.
+                enemy.TakeDamage(damageAmount);
+                Debug.Log("Fist hit enemy! Enemy is hurt.");
+            }
+        }
     }
 }

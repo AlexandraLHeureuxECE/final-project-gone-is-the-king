@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 3
   tags:
   - object
+  - Enemy
+  - Protagonist
   layers:
   - Default
   - TransparentFX
