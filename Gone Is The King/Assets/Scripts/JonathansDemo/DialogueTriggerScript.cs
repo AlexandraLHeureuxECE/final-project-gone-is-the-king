@@ -1,11 +1,12 @@
 using System;
 using JonathansDemo;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class DialogueTrigger : MonoBehaviour
 {
     public Dialogue dialogue;
-    public GameObject promptText;
+    [FormerlySerializedAs("promptText")] public GameObject talkableTxtBox;
     private bool playerNearNPC = false;
     private Vector3 promptOffset;
 
@@ -14,20 +15,20 @@ public class DialogueTrigger : MonoBehaviour
 
     void Start()
     {
-        if (promptText != null)
+        if (talkableTxtBox != null)
         {
-            promptOffset = promptText.transform.localPosition;
-            promptText.SetActive(false);
+            promptOffset = talkableTxtBox.transform.localPosition;
+            talkableTxtBox.SetActive(false);
         }
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (promptText != null && playerNearNPC)
+        if (talkableTxtBox != null && playerNearNPC)
         {
-            float bob = Mathf.Sin(Time.time * 4f) * 0.1f;
-            promptText.transform.localPosition = promptOffset + new Vector3(0, bob, 0);
+            float bob = Mathf.Sin(Time.time * 3f) * 0.008f;
+            talkableTxtBox.transform.localPosition = promptOffset + new Vector3(0, bob, 0);
         }
 
         if (playerNearNPC && Input.GetKeyDown(KeyCode.E))
@@ -53,7 +54,7 @@ public class DialogueTrigger : MonoBehaviour
         if (other.CompareTag("DialogueNPC"))
         {
             playerNearNPC = true;
-            if (promptText != null) promptText.SetActive(true);
+            if (talkableTxtBox != null) talkableTxtBox.SetActive(true);
         }
     }
 
@@ -62,7 +63,7 @@ public class DialogueTrigger : MonoBehaviour
         if (other.CompareTag("DialogueNPC"))
         {
             playerNearNPC = false;
-            if (promptText != null) promptText.SetActive(false);
+            if (talkableTxtBox != null) talkableTxtBox.SetActive(false);
         }
     }
 }
