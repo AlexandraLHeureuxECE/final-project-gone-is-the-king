@@ -60,6 +60,19 @@ PrefabInstance:
       propertyPath: m_Name
       value: BodySprites_0 Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 9169298275858546362, guid: f49c5ea73bb2447939b4fa94c84b96b0, type: 3}
+      propertyPath: 'dialogue.sentence.Array.data[0]'
+      value: "Hah\u2026 so that\u2019s your choice. A mercy I wouldn\u2019t have
+        given you"
+      objectReference: {fileID: 0}
+    - target: {fileID: 9169298275858546362, guid: f49c5ea73bb2447939b4fa94c84b96b0, type: 3}
+      propertyPath: 'dialogue.sentence.Array.data[1]'
+      value: "You\u2019ve got guts. Maybe even a future in this filthy world"
+      objectReference: {fileID: 0}
+    - target: {fileID: 9169298275858546362, guid: f49c5ea73bb2447939b4fa94c84b96b0, type: 3}
+      propertyPath: 'dialogue.sentence.Array.data[2]'
+      value: "Don\u2019t waste it. People like me don\u2019t stay down for long"
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

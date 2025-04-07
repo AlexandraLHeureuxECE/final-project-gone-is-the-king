@@ -166,12 +166,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d488e96678b6a94abd356c897462e52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _health: 100
+  _health: 250
   _defense: 0
-  moveSpeed: 1
-  attackRange: 1
+  moveSpeed: 1.5
+  attackRange: 0.5
   detectionRange: 5
-  damage: 10
+  damage: 20
 --- !u!61 &1482420222308125582
 BoxCollider2D:
   m_ObjectHideFlags: 0
