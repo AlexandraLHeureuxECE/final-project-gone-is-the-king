@@ -12,6 +12,15 @@ EditorBuildSettings:
     path: Assets/Scenes/CharacterSelection.unity
     guid: 24b22b1137a61ff48b39958b89ddd2b4
   - enabled: 1
+<<<<<<< Updated upstream
+=======
+    path: Assets/Scenes/overgrownForest.unity
+    guid: a5e65217aca75214cbef7cbea3e7858f
+  - enabled: 1
+    path: Assets/Scenes/InsideCastle.unity
+    guid: bde67460e9a941a4785b24e721c01843
+  - enabled: 1
+>>>>>>> Stashed changes
     path: Assets/Scenes/PortLevel.unity
     guid: 6fa3494022889d844a43e67aa7a84394
   - enabled: 0
